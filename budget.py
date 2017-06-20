@@ -24,15 +24,14 @@ class budget():
         self.holy_grail.append('{:%Y%m%d%H%M}'.format(datetime.datetime.today()))
         self.holy_grail.append(dict())
         for a in working:
-            zorro = tuple(a[0])
-            self.holy_grail[1].update({''.join(zorro):float(a[1])})
-            # Need to turn key in dictionary into a tuple!!!!
+            # self.holy_grail[1].update({(a[0],):float(a[1])})
+            self.holy_grail[1].update({(a[0] + ' (Ref#{:%f})'.format(datetime.datetime.today()),):float(a[1])})
         print('BUDGET: {}\n{}\n'.format(self.holy_grail[0],((len(self.holy_grail[0])+8) * "-")))
         for key,value in self.holy_grail[1].items():
-            print('{:25s}{:7.2f}'.format(key.upper(),value))
+            print('{:40s}{:7.2f}'.format(key[0].upper(),value))
             balance = balance + value
         spacex()
-        print('{:25s}{:7.2f}'.format('balance'.upper(),float(balance)))
+        print('{:40s}{:7.2f}'.format('balance'.upper(),float(balance)))
         spacex()
         hor_line()
         spacex()
