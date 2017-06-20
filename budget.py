@@ -23,13 +23,13 @@ class budget():
         self.holy_grail.append(dict())
         for a in working:
             # self.holy_grail[1].update({(a[0],):float(a[1])})
-            self.holy_grail[1].update({(a[0] + ' (Ref#{:%f})'.format(datetime.datetime.today()),):float(a[1])})
+            self.holy_grail[1].update({(a[0],'{:%f})'.format(datetime.datetime.today()),):float(a[1])})
         print('BUDGET: {}\n{}\n'.format(self.holy_grail[0],((len(self.holy_grail[0])+8) * "-")))
         for key,value in self.holy_grail[1].items():
-            print('{:40s}{:7.2f}'.format(key[0].upper(),value))
+            print('{:30s}{:7.2f}'.format(key[0].upper(),value))
             balance = balance + value
         spacex()
-        print('{:40s}{:7.2f}'.format('balance'.upper(),float(balance)))
+        print('{:30s}{:7.2f}'.format('balance'.upper(),float(balance)))
         spacex()
         hor_line()
         spacex()
