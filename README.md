@@ -2,6 +2,6 @@
 
 Format external data as folows:
 
-<description>=<amount>
+`<description>=<amount>`
 
-At this point in development, MAKE ABSOLUTELY SURE <description> is --> U N I Q U E ! ! <--
+At this point in development, MAKE ABSOLUTELY SURE `<description>` is --> U N I Q U E ! ! <--
