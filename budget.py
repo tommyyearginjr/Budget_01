@@ -6,7 +6,7 @@ Format external data as folows:
 <description>=<amount>
 '''
 class budget():
-    def __init__(self,budget_data):
+    def __init__(self,budget_data,budget_title):
         import datetime
         def spacex():
             print('')
@@ -19,7 +19,8 @@ class budget():
         for i in f.readlines():
             working.append(i.split("="))
         f.close()
-        self.holy_grail.append('{:%Y%m%d%H%M}'.format(datetime.datetime.today()))
+        # self.holy_grail.append('{:%Y%m%d%H%M}'.format(datetime.datetime.today()))
+        self.holy_grail.append(budget_title)
         self.holy_grail.append(dict())
         for a in working:
             # self.holy_grail[1].update({(a[0],):float(a[1])})
